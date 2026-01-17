@@ -51,7 +51,7 @@ const Footer = () => {
                 color: 'var(--color-text-dim)',
                 fontSize: '0.9rem'
             }}>
-                © 2024 GameHub. All rights reserved. Made with ⚡.
+                © 2026 GameHub. All rights reserved. Made by <span className="text-gradient" style={{ fontWeight: 'bold' }}>Roshan</span> ⚡
             </div>
         </footer>
     );
