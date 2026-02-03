@@ -6,15 +6,18 @@ const games = [
     { id: 3, title: 'Rock Paper Scissors', category: 'Casual', rating: '4.6', color: 'linear-gradient(45deg, #BD93F9, #FF79C6)' },
 ];
 
-const GameCard = ({ game }) => (
-    <div className="glass glow-hover" style={{
-        borderRadius: '20px',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        cursor: 'pointer'
-    }}>
+const GameCard = ({ game, onClick }) => (
+    <div
+        className="glass glow-hover"
+        onClick={onClick}
+        style={{
+            borderRadius: '20px',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+            cursor: 'pointer'
+        }}>
         <div style={{
             height: '200px',
             background: game.color,
@@ -30,12 +33,21 @@ const GameCard = ({ game }) => (
                 <span style={{ color: '#FFD700', fontSize: '0.9rem' }}>★ {game.rating}</span>
             </div>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{game.title}</h3>
-            <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem' }}>Join the action and compete with players worldwide.</p>
+            <p style={{ color: 'var(--color-text-dim)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>Join the action and compete with players worldwide.</p>
+            <button className="glow-hover" style={{
+                width: '100%',
+                padding: '10px',
+                borderRadius: '10px',
+                background: 'var(--gradient-main)',
+                color: 'black',
+                fontWeight: '700',
+                fontSize: '0.9rem'
+            }}>PLAY NOW</button>
         </div>
     </div>
 );
 
-const GameGrid = () => {
+const GameGrid = ({ onPlayGame }) => {
     return (
         <section id="games" style={{ padding: '5rem 0' }}>
             <div className="container">
@@ -53,7 +65,11 @@ const GameGrid = () => {
                     gap: '2rem'
                 }}>
                     {games.map(game => (
-                        <GameCard key={game.id} game={game} />
+                        <GameCard
+                            key={game.id}
+                            game={game}
+                            onClick={() => onPlayGame(game.id)}
+                        />
                     ))}
                 </div>
             </div>

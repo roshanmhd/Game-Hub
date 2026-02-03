@@ -73,13 +73,16 @@ const Hero = () => {
                         START PLAYING
                     </button>
 
-                    <button className="glass glow-hover" style={{
-                        color: '#fff',
-                        padding: '1rem 3rem',
-                        borderRadius: '50px',
-                        fontSize: '1.1rem',
-                        fontWeight: '700'
-                    }}>
+                    <button
+                        className="glass glow-hover"
+                        style={{
+                            color: '#fff',
+                            padding: '1rem 3rem',
+                            borderRadius: '50px',
+                            fontSize: '1.1rem',
+                            fontWeight: '700'
+                        }}
+                    >
                         BROWSE GAMES
                     </button>
                 </div>

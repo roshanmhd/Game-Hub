@@ -3,8 +3,13 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import GameGrid from './components/GameGrid';
 import Footer from './components/Footer';
+import UnoGame from './components/UnoGame';
+import TicTacToe from './components/TicTacToe';
+import RockPaperScissors from './components/RockPaperScissors';
 
 function App() {
+  const [activeGame, setActiveGame] = React.useState(null);
+
   return (
     <div className="app-container" style={{ position: 'relative' }}>
       {/* Background Grid Pattern */}
@@ -25,8 +30,12 @@ function App() {
 
       <Navbar />
       <Hero />
-      <GameGrid />
+      <GameGrid onPlayGame={(gameId) => setActiveGame(gameId)} />
       <Footer />
+
+      {activeGame === 1 && <UnoGame onClose={() => setActiveGame(null)} />}
+      {activeGame === 2 && <TicTacToe onClose={() => setActiveGame(null)} />}
+      {activeGame === 3 && <RockPaperScissors onClose={() => setActiveGame(null)} />}
     </div>
   );
 }
