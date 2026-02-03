@@ -4,9 +4,6 @@ const games = [
     { id: 1, title: 'UNO', category: 'Card Game', rating: '4.8', color: 'linear-gradient(45deg, #FF5555, #FFB86C)' },
     { id: 2, title: 'Tic-Tac-Toe', category: 'Classic', rating: '4.5', color: 'linear-gradient(45deg, #50fa7b, #282a36)' },
     { id: 3, title: 'Rock Paper Scissors', category: 'Casual', rating: '4.6', color: 'linear-gradient(45deg, #BD93F9, #FF79C6)' },
-    { id: 4, title: 'Black Jack', category: 'Card Game', rating: '4.7', color: 'linear-gradient(45deg, #ffb86c, #f1fa8c)' },
-    { id: 5, title: "Liar's Bar", category: 'Strategy', rating: '4.9', color: 'linear-gradient(45deg, #8be9fd, #6272a4)' },
-    { id: 6, title: 'Coming Soon...', category: 'Mystery', rating: '?.?', color: 'linear-gradient(45deg, #44475a, #6272a4)' },
 ];
 
 const GameCard = ({ game }) => (
